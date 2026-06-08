@@ -1,6 +1,10 @@
 ---
 import Navigation from "../components/Navigation.astro";
 import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+
+
+const pageTitle = "Blog"
 ---
 
 <html lang="pt-br">
@@ -9,13 +13,8 @@ import "../styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-    <style>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-    </style>
+    <title>{pageTitle}</title>
+  
   </head>
   <body>
     <Navigation />
@@ -28,5 +27,6 @@ import "../styles/global.css";
       <li><a href="/posts/post-2">Postagem 2</a></li>
       <li><a href="/posts/post-3">Postagem 3</a></li>
     </ul>
+    <Footer />
   </body>
 </html>

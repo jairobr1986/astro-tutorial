@@ -1,6 +1,8 @@
 ---
 import Navigation from "../components/Navigation.astro";
 import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+
 
 const pageTitle = "Pagina Incial";
 ---
@@ -11,18 +13,15 @@ const pageTitle = "Pagina Incial";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-    <style>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-    </style>
+    <title>{pageTitle}</title>
+   
   </head>
   <body>
     <Navigation />
 
     <h1>Astro</h1>
     <h1>Meu Site Astro</h1>
+    <Footer />
+
   </body>
 </html>
