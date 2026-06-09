@@ -1,0 +1,41 @@
+---
+const { platform, username } = Astro.props;
+
+// 1. Criamos variáveis vazias que vão mudar dependendo da rede
+let domain = "com";
+let prefix = "";
+
+// 2. Analisamos qual é a plataforma atual
+switch (platform.toLowerCase()) {
+  case "linkedin":
+    prefix = "in/";
+    break;
+  case "youtube":
+  case "tiktok":
+    prefix = "@";
+    break;
+  case "bluesky":
+    domain = "app"; // Muda de .com para .app
+    prefix = "profile/";
+    break;
+  // Se for github, instagram, twitter, etc., entra aqui e não muda nada
+  default:
+    prefix = "";
+    domain = "com";
+}
+---
+
+<!-- 3. Montamos a URL usando as variáveis inteligentes que criamos acima -->
+<a href={`https://www.${platform}.${domain}/${prefix}${username}`} target="_blank" rel="noopener noreferrer">
+  {platform}
+</a>
+
+<style>
+  a {
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #4c1d95;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+</style>

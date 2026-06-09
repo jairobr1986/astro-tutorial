@@ -1,8 +1,20 @@
 ---
-const platform = "github";
-const username = "jairobr1986";
+import Social from "./Social.astro";
 ---
 
+<!-- Estilize seu Componente de Rodapé -->
+<style>
+  footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+</style>
+<!-- Estilize seu Componente de Rodapé -->
+
+
 <footer>
-  <p>Aprenda mais sobre meus projetos em <a href={`https://www.${platform}.com/${username}`} target="_blank" rel="noopener noreferrer">{platform}</a>!</p>
+  <Social platform="linkedin" username="jairobr1986" />
+  <Social platform="github" username="jairobr1986" />
+  <Social platform="instagram" username="jairo.work" />
 </footer>
