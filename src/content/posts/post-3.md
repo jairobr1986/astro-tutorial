@@ -1,7 +1,7 @@
 ---
 title: Minha Terceira Postagem no Blog
 pubDate: 2026-06-01
-author: Aluno de Astro
+author: Jairo Aluno de Astro
 description: "Eu tive alguns desafios, mas perguntar na comunidade realmente me ajudou!"
 image:
     url: "https://docs.astro.build/assets/rays.webp"

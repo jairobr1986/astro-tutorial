@@ -1,7 +1,7 @@
 ---
 title: Minha Segunda Postagem no Blog
 pubDate: 2026-06-01
-author: Aluno de Astro
+author: Jairo Aluno de Astro
 description: "Após aprender um pouco sobre Astro, eu não consegui parar!"
 image:
     url: "https://docs.astro.build/assets/arc.webp"

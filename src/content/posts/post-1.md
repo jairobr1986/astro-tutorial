@@ -2,7 +2,7 @@
 title: 'Minha Primeira Postagem no Blog'
 pubDate: 2026-06-01
 description: 'Esta é a primeira postagem do meu novo blog Astro.'
-author: 'Aluno de Astro'
+author: 'Jairo Aluno de Astro'
 image:
     url: 'https://docs.astro.build/assets/rose.webp'
     alt: 'Logo Astro em fundo escuro com brilho rosa.'
