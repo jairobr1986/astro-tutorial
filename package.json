@@ -1,13 +1,26 @@
 {
-  "name": "tutorial",
+  "name": "jbr19686-site-base",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
+  "description": "Base Astro mobile-first para sites estaticos criados por Jairo.",
+  "author": "Jairo Oliveira Santos (@jairobr1986)",
+  "license": "MIT",
+  "keywords": [
+    "astro",
+    "static-site",
+    "mobile-first",
+    "portfolio",
+    "jbr19686",
+    "jairobr1986"
+  ],
   "engines": {
     "node": ">=22.12.0"
   },
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "check": "astro check",
     "preview": "astro preview",
     "astro": "astro"
   },

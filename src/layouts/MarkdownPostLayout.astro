@@ -1,11 +1,19 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import type { CollectionEntry } from "astro:content";
 
-const { data } = Astro.props;
+interface Props {
+  data: CollectionEntry<"posts">["data"];
+}
+
+const { data } = Astro.props as Props;
 const { title, description, pubDate, author, image, tags } = data;
 ---
 
-<BaseLayout pageTitle={title}>
+<BaseLayout
+  pageTitle={title}
+  pageDescription={description ?? `Post escrito por ${author ?? "Jairo"}.`}
+>
   <p><em>{description}</em></p>
   <p>{pubDate instanceof Date ? pubDate.toISOString().slice(0, 10) : pubDate}</p>
 
@@ -14,7 +22,7 @@ const { title, description, pubDate, author, image, tags } = data;
   <img src={image?.url} width="300" alt={image?.alt} />
 
   <div class="tags">
-    {tags?.map((tag) => (
+    {tags?.map((tag: string) => (
       <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
     ))}
   </div>

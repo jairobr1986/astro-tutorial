@@ -6,15 +6,74 @@ import Social from "./Social.astro";
 <style>
   footer {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     gap: 1rem;
     margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .social-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .credit {
+    position: relative;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+
+  .credit:hover,
+  .credit:focus-visible {
+    color: var(--link);
+  }
+
+  .credit::after {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 0.6rem);
+    width: max-content;
+    max-width: min(18rem, 80vw);
+    padding: 0.45rem 0.65rem;
+    border-radius: 0.5rem;
+    color: var(--accent-contrast);
+    background: var(--accent);
+    content: attr(data-tooltip);
+    font-size: 0.78rem;
+    line-height: 1.3;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(0.25rem);
+    transition: opacity 160ms ease, transform 160ms ease;
+  }
+
+  .credit:hover::after,
+  .credit:focus-visible::after {
+    opacity: 1;
+    transform: translateY(0);
   }
 </style>
-<!-- Estilize seu Componente de Rodapé -->
-
 
 <footer>
-  <Social platform="linkedin" username="jairobr1986" />
-  <Social platform="github" username="jairobr1986" />
-  <Social platform="instagram" username="jairo.work" />
+  <div class="social-list" aria-label="Redes sociais de Jairo">
+    <Social platform="linkedin" username="jairobr1986" />
+    <Social platform="github" username="jairobr1986" />
+    <Social platform="instagram" username="jairo.work" />
+  </div>
+
+  <a
+    class="credit"
+    href="https://www.linkedin.com/in/jairobr1986"
+    target="_blank"
+    rel="noopener noreferrer"
+    data-tooltip="Site desenvolvido por Jairo Oliveira Santos (@jairobr1986)"
+    aria-label="Site desenvolvido por Jairo Oliveira Santos. Abrir LinkedIn."
+  >
+    @jairobr1986
+  </a>
 </footer>

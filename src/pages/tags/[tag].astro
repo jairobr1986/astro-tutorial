@@ -22,10 +22,14 @@ export async function getStaticPaths() {
 }
 
 const { tag } = Astro.params;
-const { posts } = Astro.props;
+interface Props {
+  posts: any[];
+}
+const { posts } = Astro.props as Props;
+const pageDescription = `Posts publicados com a tag ${tag}.`;
 ---
 
-<BaseLayout pageTitle={tag}>
+<BaseLayout pageTitle={tag} pageDescription={pageDescription}>
   <p>Postagens com a tag {tag}</p>
   <ul>
     {posts.map((post) => (

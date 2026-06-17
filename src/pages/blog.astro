@@ -5,9 +5,10 @@ import { getCollection } from 'astro:content';
 
 const allPosts = await getCollection('posts');
 const pageTitle = 'Meu Blog';
+const pageDescription = 'Artigos e anotacoes sobre a jornada de aprendizado com Astro e desenvolvimento de sites estaticos.';
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
   <ul>
     {allPosts.map((post) => (
       <BlogPost url={`/posts/${post.id}`} title={post.data.title} />

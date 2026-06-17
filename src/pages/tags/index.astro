@@ -1,16 +1,16 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-// Substitui Astro.glob (descontinuado) por import.meta.glob (moderno)
-const modules = import.meta.glob('../../content/posts/*.md', { eager: true });
-const allPosts = Object.values(modules);
+const allPosts = await getCollection('posts');
 
-// Extrai e retorna tags únicas
-const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+// Extrai e retorna tags únicas (protege posts sem tags)
+const tags = [...new Set(allPosts.map((post) => post.data.tags ?? []).flat())];
 const pageTitle = "Índice de Tags";
+const pageDescription = "Indice de tags dos posts publicados no blog.";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle} pageDescription={pageDescription}>
   <div class="tags">
     {tags.map((tag) => (
       <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
